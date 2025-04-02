@@ -29,18 +29,19 @@ class Polynomial:
     
     def scalar(self,other):
         
-        new_degre = len(self.coefficients) + len(other.coefficients)-1
-        new_coeffs = [0]*new_degre
+        new_coeffs = [0]*len(self.coefficients)
         for i in range( len(self.coefficients) ):
-            for j in range( len(other.coefficients) ):
-                new_coeffs[i+j] = self.coefficients[i]*other.coefficients[j]
-        return Polynomial(new_coeffs)      
+            new_coeffs[i] = c*self.coefficients[i]
+        return Polynomial(new_coeffs)
         
+#test 
 p1 = Polynomial([2,-3,5])
 print(p1)
 p2 = Polynomial([-3,-1,-4])
-p3 = Polynomial.scalar(p1,p2)
+c = 2
+p3 = Polynomial.scalar(p1,c)
 print(p3)   
+
 
 # Exercice 2
 #On propose ceci pour la classe des polynome modulo q : 
